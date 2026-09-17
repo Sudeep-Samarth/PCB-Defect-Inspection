@@ -1,0 +1,29 @@
+# Plan FIles
+0_OverAll_plan.txt
+1_techStack.txt
+2_steps.txt
+
+# Environments
+venv/
+.env/
+env/
+
+# Python & Notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Dataset & Cropped Patches (Do not push to GitHub)
+DeepPCB/
+data/
+*.zip
+*.tar.gz
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+
+# IDE files
+.vscode/
+.idea/
