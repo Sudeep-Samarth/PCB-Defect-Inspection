@@ -2,6 +2,7 @@
 0_OverAll_plan.txt
 1_techStack.txt
 2_steps.txt
+3_classes.txt
 
 # Environments
 venv/
@@ -15,11 +16,15 @@ __pycache__/
 
 # Dataset & Cropped Patches (Do not push to GitHub)
 DeepPCB/
+raw_dataset/
 data/
 *.zip
 *.tar.gz
 
 # Model weights
+models/*.pt
+models/*.pth
+models/*.onnx
 *.pt
 *.pth
 *.onnx
@@ -27,3 +32,12 @@ data/
 # IDE files
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+
+# Evaluation plots & reports
+outputs/
+reports/
+*.png
+*.jpg
+*.jpeg
