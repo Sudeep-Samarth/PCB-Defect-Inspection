@@ -1,3 +1,10 @@
+# Step1
+'''
+1. Created folders for all classes in /data folder
+2. Converted all annotations in each .txt file into tuples, for each board
+3. Cropped and saved all defects' images in data folder
+'''
+
 import os
 import cv2
 import glob
