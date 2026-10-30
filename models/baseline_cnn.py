@@ -1,17 +1,13 @@
 # Step3
 '''
-Define the CNN architecture (Baseline)
+Define the CNN architecture (Baseline) 
 '''
 
 import torch
 import torch.nn as nn
 
 class DefectBaselineCNN(nn.Module):
-    """
-    Lightweight 4-block Convolutional Neural Network for PCB Defect Classification.
-    Each block: Conv2d -> BatchNorm2d -> ReLU -> MaxPool2d.
-    Classification head: AdaptiveAvgPool2d -> Flatten -> Dropout -> Linear -> ReLU -> Linear.
-    """
+
 
     def __init__(self, num_classes: int=6, dropout_p: float = 0.4):
         super(DefectBaselineCNN, self).__init__()
@@ -50,7 +46,7 @@ class DefectBaselineCNN(nn.Module):
             nn.Flatten(), # Flattens the 3D feature tensor into a 1D vector of length $4096$ ($256 \times 4 \times 4$).
             nn.Linear(256 * 4 * 4, 256), # Dense layer that learns combinations of the extracted defect features.
             nn.ReLU(inplace=True), 
-            nn.Dropout(p=dropout_p), # andomly deactivates 40% of neurons during training, preventing the model from memorizing specific training samples (regularization against overfitting).
+            nn.Dropout(p=dropout_p), # randomly deactivates 40% of neurons during training, preventing the model from memorizing specific training samples (regularization against overfitting).
             nn.Linear(256, num_classes) # Maps the final 256 hidden features to 6 raw logits (one score for each defect class: open, short, mousebite, spur, copper, pin-hole).
         )
 

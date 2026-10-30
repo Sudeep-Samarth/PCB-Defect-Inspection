@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 import torch
 import torch.nn as nn
-import torch.optim as optim
+import torch.optim as optim 
 
 # Add root folder to sys.path so modules can be imported directly
 sys.path.append(str(Path(__file__).resolve().parent.parent))
